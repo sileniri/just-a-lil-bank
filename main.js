@@ -15,6 +15,6 @@ function openSubpage(input) {
 }
 
 function setTheme(theme) {
-    document.querySelector('#pageStyle').href = '/main/' + theme + '.css';
+    document.querySelector('#pageStyle').href = '/blob/main/' + theme + '.css';
     document.querySelector('.dropDownBtn').innerHTML = theme + ' Theme';
 }
