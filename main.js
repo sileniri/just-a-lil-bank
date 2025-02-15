@@ -15,6 +15,6 @@ function openSubpage(input) {
 }
 
 function setTheme(theme) {
-    document.querySelector('#pageStyle').href = 'just-a-lil-bank/' + theme + '.css';
+    document.querySelector('#pageStyle').href = theme + '.css';
     document.querySelector('.dropDownBtn').innerHTML = theme + ' Theme';
 }
