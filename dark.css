@@ -1,0 +1,238 @@
+:root {
+    --bgDark: hsl(0, 0%, 15%);
+    --bgMed: hsl(0, 0%, 20%);
+    --bgLight: hsl(0, 0%, 30%);
+    --btnHover: hsl(0, 0%, 50%);
+    --shdw: hsla(0, 0%, 0%, 50%);
+    --fc: #fff;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.websiteContainer {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template: 90px 1fr / 0 1fr;
+    gap: 0px;
+    margin: 0;
+    padding: 0;
+    font-family: 'EB Garamond';
+    font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
+}
+
+.websiteContainer.active {
+    grid-template: 90px 1fr / 250px 1fr;
+}
+
+/* Title Bar */
+.titleBar {
+    grid-column: span 2;
+    border: none;
+    background-color: var(--bgDark);
+    display: flex;
+    padding: 10px;
+}
+
+.space {
+    width: 1em;
+}
+
+/* Navigation Bar */
+
+.navigationContainer {
+    background-color: var(--bgMed);
+}
+
+#openMenu {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bgMed);
+    border: none;
+    border-radius: 0 25% 25% 0;
+}
+
+#openMenu:hover {
+    filter: drop-shadow(0 0 50px var(--bgMed));
+    cursor: pointer;
+}
+
+/* Changes menuicon upon hovering button */
+#openMenu:hover .material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 800,
+        'GRAD' -25,
+        'opsz' 24;
+}
+#openMenu.active {
+    left: 250px;
+}
+
+#menuIcon {
+    font-size: 2px;
+    cursor: pointer;
+}
+
+#openIcon {
+    opacity: 0;
+    position: relative;
+    bottom: 0.5em;
+    cursor: pointer;
+}
+#openIcon.active {
+    rotate: -180deg;
+    opacity: 1;
+}
+
+#closeIcon {
+    opacity: 0;
+    position: relative;
+    top: 0.5em;
+    cursor: pointer;
+}
+#closeIcon.active {
+    rotate: 180deg;
+    opacity: 1;
+}
+
+.navigationBar {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+}
+
+.navigationBar button {
+    font-family: 'EB Garamond';
+    font-size: 1.1em;
+    background-color: transparent;
+    color: var(--fc);
+    border: none;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.navigationBar button:hover {
+    cursor: pointer;
+    background-color: var(--btnHover);
+    filter: drop-shadow(0 0 20px var(--btnHover));
+    font-weight: 800;
+}
+
+.navigationBar hr {
+    width: 100%;
+    border: solid 1px var(--fc);
+}
+
+.dropDown {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex-direction: column;
+}
+
+.dropDownOptions {
+    margin: 10px;
+    width: 210px;
+    position: absolute;
+    top: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    flex-direction: column;
+    filter: drop-shadow(0 0 50px var(--shdw));
+    opacity: 0;
+}
+
+.dropDown:hover .dropDownOptions {
+    opacity: 1;
+    background-color: var(--bgLight);
+}
+
+.dropDown:hover .dropDownBtn {
+    background-color: var(--btnHover);
+    filter: drop-shadow(0 0 20px var(--btnHover));
+    font-weight: 800;
+
+}
+
+/* Main Window */
+.mainWindow {
+    padding: 15px 100px 15px 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgLight);
+}
+
+
+/* Global code (applies for everything with said tag) */
+
+.hidden {
+    display: none;
+}
+
+.italicText {
+    font-style: italic;
+}
+
+.smallerText {
+    font-size: 80%;
+}
+
+.material-symbols-rounded {
+    font-family: 'Material symbols rounded';
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' -25,
+        'opsz' 24;
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+p {
+    text-align: justify;
+}
+
+.blinkMe {
+    animation: blinker 1s ease infinite;
+}
+  
+@keyframes blinker {
+    50% {
+        filter: drop-shadow(0 0 50px var(--fc));
+    }
+}
+
+* {
+    cursor: default;
+    color: var(--fc);
+    transition: normal 0.3s ease 0s all;
+    hyphens: auto;
+}
+
+::selection {
+    filter: blur(5px);
+}
