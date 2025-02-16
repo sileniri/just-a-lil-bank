@@ -16,5 +16,5 @@ function openSubpage(input) {
 
 function setTheme(theme) {
     document.querySelector('#pageStyle').href = 'https://sileniri.github.io/just-a-lil-bank/' + theme + '.css';
-    document.querySelector('.dropDownBtn').innerHTML = theme + ' Theme';
+    document.querySelector('.dropDownBtn').innerHTML = theme.toUpperCase() + ' THEME';
 }
